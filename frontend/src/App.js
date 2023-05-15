@@ -25,8 +25,10 @@ import RootLayout from './components/Layout/RootLayout';
 import ErrorPage from './components/Pages/ErrorPage';
 import HomePage from './components/Pages/HomePage';
 import EventsLayout from './components/Layout/EventsLayout';
-import EventsList from './components/EventsList';
-import EventForm from './components/EventForm';
+import EventDetailPage from './components/Pages/EventDetailPage';
+import NewEventPage from './components/Pages/NewEventPage';
+import EventsPage from './components/Pages/EventsPage';
+import EditEventPage from './components/Pages/EditEventPage';
 
 const DUMMY_EVENTS = [
   {
@@ -67,8 +69,10 @@ const router = createBrowserRouter([
         element: <EventsLayout />,
         errorElement: <ErrorPage />,
         children: [
-          { path: '', element: <EventsList events={DUMMY_EVENTS} /> },
-          { path: 'new', element: <EventForm /> },
+          { path: '', element: <EventsPage events={DUMMY_EVENTS} /> },
+          { path: 'new', element: <NewEventPage /> },
+          { path: ':eventId', element: <EventDetailPage /> },
+          { path: ':eventId/edit', element: <EditEventPage /> },
         ],
       },
     ],
