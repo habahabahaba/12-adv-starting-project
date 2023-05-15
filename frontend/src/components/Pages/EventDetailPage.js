@@ -13,7 +13,7 @@ export default function EventDetailPage() {
     <>
       {' '}
       <form className={classes.form}>
-        <h1>Event (id: {params.eventId}) Detail Page</h1>
+        <h1>Event (id: {params.eventId}) details:</h1>
         <div className={classes.actions}>
           <button onClick={navigateToEditHandler}>Edit Event</button>
         </div>
